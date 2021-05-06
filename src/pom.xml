@@ -21,18 +21,47 @@
 	 			<version>${tycho.version}</version>
 				<extensions>true</extensions>
 			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+	 			<version>${tycho.version}</version>
+	 			<configuration>
+	 				<executionEnvironment>${java.version}</executionEnvironment>
+   					<target>
+						<artifact>
+							<groupId>tycho.example</groupId>
+  							<artifactId>com.gmv.tycho.platform</artifactId>
+   							<version>1.0.0-SNAPSHOT</version>
+						</artifact>
+					</target>
+					<resolver>p2</resolver>
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+	 			</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	
 	<modules>
+		<module>target_platform</module>
 		<module>bundles/com.gmv.tycho.example.plugin</module>
 		<module>bundles/com.gmv.tycho.example.application</module>
 	</modules>
-	<repositories>
-		<repository>
-        <id>eclipse-2018-12</id>
-        <url>https://download.eclipse.org/releases/2018-12</url>
-        <layout>p2</layout>
-     </repository>
-	</repositories>
+<!-- 	<repositories> -->
+<!-- 		<repository> -->
+<!--         <id>eclipse-2018-12</id> -->
+<!--         <url>https://download.eclipse.org/releases/2018-12</url> -->
+<!--         <layout>p2</layout> -->
+<!--      </repository> -->
+<!-- 	</repositories> -->
 </project>
