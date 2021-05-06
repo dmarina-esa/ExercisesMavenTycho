@@ -57,6 +57,7 @@
 		<module>bundles/com.gmv.tycho.example.plugin</module>
 		<module>bundles/com.gmv.tycho.example.application</module>
 		<module>products</module>
+		<module>features/com.gmv.p2.site</module>
 	</modules>
 <!-- 	<repositories> -->
 <!-- 		<repository> -->

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <bundle id="com.gmv.tycho.example.application">
+      <category name="com.gmv.category.test"/>
+   </bundle>
+   <bundle id="com.gmv.tycho.example.plugin">
+      <category name="com.gmv.category.test"/>
+   </bundle>
+   <category-def name="com.gmv.category.test" label="Category Test"/>
+</site>
