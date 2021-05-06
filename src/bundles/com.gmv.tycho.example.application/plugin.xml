@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.gmv.tycho.example.application.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.gmv.tycho.example.application.Perspective"
+            name="RCP Perspective"
+            id="com.gmv.tycho.example.application.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="true"
+            icon="icons/sample2.gif"
+            class="com.gmv.tycho.example.application.View"
+            name="Message"
+            id="com.gmv.tycho.example.application.view">
+      </view>
+      <view
+            allowMultiple="true"
+            icon="icons/sample3.gif"
+            class="com.gmv.tycho.example.application.NavigationView"
+            name="Mailboxes"
+            id="com.gmv.tycho.example.application.navigationView">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="com.gmv.tycho.example.application.category"
+            name="Mail">
+      </category>
+      <command
+            description="Opens a mailbox"
+            name="Open Mailbox"
+            id="com.gmv.tycho.example.application.open"
+            categoryId="com.gmv.tycho.example.application.category">
+      </command>
+      <command
+            description="Open a message dialog"
+            name="Open Message Dialog"
+            id="com.gmv.tycho.example.application.openMessage"
+            categoryId="com.gmv.tycho.example.application.category">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.gmv.tycho.example.application.open"
+            sequence="CTRL+SHIFT+O"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+      <key
+            commandId="com.gmv.tycho.example.application.openMessage"
+            sequence="CTRL+SHIFT+M"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+      <key
+            commandId="org.eclipse.ui.file.exit"
+            sequence="CTRL+SHIFT+Q"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            name="RCP Product"
+            application="com.gmv.tycho.example.application.application">
+         <property
+               name="aboutText"
+               value="RCP Mail template created by PDE">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/sample2.gif">
+         </property>
+         <property
+               name="aboutImage"
+               value="product_lg.gif">
+         </property>
+      </product>
+   </extension>
+
+</plugin>

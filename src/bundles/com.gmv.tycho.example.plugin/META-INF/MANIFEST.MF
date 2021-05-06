@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Plugin
+Bundle-SymbolicName: com.gmv.tycho.example.plugin
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: GMV
+Automatic-Module-Name: com.gmv.tycho.example.plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: com.gmv.tycho.example.plugin
